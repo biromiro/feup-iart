@@ -51,7 +51,7 @@ def dls(node, condition, maxDepth, visited = [], depth = 0):
     
     for edgeNode in node.edgeNodes():
         if(edgeNode in visited): continue;
-        finalNode, leftToSearch = dls(edgeNode, condition, maxDepth, visited + [node], depth + 1)
+        finalNode, _ = dls(edgeNode, condition, maxDepth, visited + [node], depth + 1)
         if(finalNode): return (finalNode, False);
     
     return (None, visited == []);
